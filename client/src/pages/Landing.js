@@ -1,21 +1,27 @@
 import React, { Component } from "react";
+import ImageOne from "../img/cuisine-2248567_1920.jpg";
+import ImageTwo from "../img/hero.jpg";
+import ImageThree from "../img/buffet-315691_1280.jpg";
 
 class Landing extends Component {
   cards = [
     {
-      image: "https://via.placeholder.com/300",
+      image: ImageOne,
       title: "Discover new foods",
-      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
-      image: "https://via.placeholder.com/300",
+      image: ImageTwo,
       title: "Share your recipes",
-      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
-      image: "https://via.placeholder.com/300",
+      image: ImageThree,
       title: "Journey through food",
-      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
     }
   ];
 
@@ -39,6 +45,7 @@ class Landing extends Component {
         </>
       );
     });
+
     return (
       <>
         <section className="landing__hero">

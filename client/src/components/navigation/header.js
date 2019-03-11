@@ -24,6 +24,9 @@ class header extends Component {
         <div className="navigation__logo">
           <img className="navigation__logo-image" src={logo} alt="logo" />
         </div>
+        {this.state.color ? (
+          <h1 className="navigation__heading">Recipes</h1>
+        ) : null}
         <ul className="navigation__menu">
           <li className="navigation__item">New recipes</li>
           <li className="navigation__item">My recipes</li>

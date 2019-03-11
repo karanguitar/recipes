@@ -33,6 +33,7 @@
   &__cards {
     background: lighten(#c2c1c2, 20);
     padding-top: 100px;
+    padding-bottom: 2rem;
     width: 100%;
     min-height: 100vh;
     display: grid;
@@ -42,15 +43,15 @@
       ". img1 content1 ."
       ". content2 img2 ."
       ". img3 content3 .";
-    grid-gap: 2rem;
+    grid-gap: 6rem 2rem;
 
     &--quote {
       grid-area: quote;
       text-align: center;
-      padding-bottom: 100px;
     }
 
     &__image {
+      width: 100%;
       &--1 {
         grid-area: img1;
       }
@@ -71,6 +72,14 @@
       }
       &--3 {
         grid-area: content3;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1.1rem;
       }
     }
   }

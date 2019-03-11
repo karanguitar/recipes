@@ -11,11 +11,13 @@
   border-bottom: 1px transparent;
   animation-name: example-reverse;
   animation-duration: 0.5s;
+  transform-origin: top;
 
   &--white {
     background: white;
     animation-name: example;
     animation-duration: 0.5s;
+    box-shadow: -1px 10px 37px -8px rgba(0, 0, 0, 0.75);
   }
 
   &__logo {
@@ -27,6 +29,13 @@
     &-image {
       height: 80px;
     }
+  }
+
+  &__heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
   }
 
   &__menu {
@@ -57,6 +66,7 @@
 @keyframes example {
   from {
     background-color: transparent;
+    height: 0;
   }
   to {
     background-color: white;
@@ -69,5 +79,6 @@
   }
   to {
     background-color: transparent;
+    height: 0;
   }
 }
