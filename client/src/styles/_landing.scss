@@ -33,9 +33,59 @@
 
   &__cards {
     background: lighten(#c2c1c2, 70%);
-    background-size: cover;
+    padding-top: 100px;
     width: 100%;
-    height: 100vh;
-    clear: both;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-areas:
+      ". quote quote ."
+      ". img1 content1 ."
+      ". content2 img2 ."
+      ". img3 content3 .";
+    grid-gap: 2rem;
+
+    &--quote {
+      grid-area: quote;
+      text-align: center;
+      padding-bottom: 100px;
+    }
+
+    &__image {
+      &--1 {
+        grid-area: img1;
+      }
+      &--2 {
+        grid-area: img2;
+      }
+      &--3 {
+        grid-area: img3;
+      }
+    }
+
+    &__content {
+      &--1 {
+        grid-area: content1;
+      }
+      &--2 {
+        grid-area: content2;
+      }
+      &--3 {
+        grid-area: content3;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    &__cards {
+      grid-template-areas:
+        ". quote quote ."
+        ". img1 img1 ."
+        ". content1 content1 ."
+        ". img2 img2 ."
+        ". content2 content2 ."
+        ". img3 img3 ."
+        ". content3 content3 .";
+    }
   }
 }
