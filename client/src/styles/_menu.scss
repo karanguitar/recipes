@@ -1,7 +1,7 @@
 .navigation {
   display: grid;
   height: 100px;
-  z-index: 1000;
+  z-index: 100;
   position: fixed;
   background: transparent;
   top: 0;
@@ -10,13 +10,13 @@
   grid-template-columns: 1fr 4fr 3fr;
   border-bottom: 1px transparent;
   animation-name: example-reverse;
-  animation-duration: 0.5s;
+  animation-duration: 0.2s;
   transform-origin: top;
 
   &--white {
     background: white;
     animation-name: example;
-    animation-duration: 0.5s;
+    animation-duration: 0.2s;
     box-shadow: -1px 10px 37px -8px rgba(0, 0, 0, 0.75);
   }
 

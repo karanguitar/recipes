@@ -6,6 +6,16 @@ import Landing from "./pages/Landing";
 import PublicRecipes from "./pages/PublicRecipes";
 
 class App extends Component {
+  // state = {
+  //   heightForModal: 0
+  // };
+
+  // saveHeight = number => {
+  //   this.setState({
+  //     heightForModal: number
+  //   });
+  // };
+
   render() {
     return (
       <div className="App">
