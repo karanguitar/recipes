@@ -26,6 +26,12 @@
     justify-content: center;
     align-items: center;
 
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     &-image {
       height: 80px;
     }
@@ -48,18 +54,26 @@
   }
 
   &__item {
-    font-size: 1.2rem;
-    padding: 0 0.5rem;
-    display: flex;
-    align-items: center;
-    transition: 1s all;
-    border-bottom: 1px solid #5fad56;
-  }
+    a {
+      height: 100%;
+      font-size: 1.2rem;
+      padding: 0 0.5rem;
+      text-decoration: none;
+      transition: 1s all;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #5fad56;
+    }
 
-  &__item:hover {
-    cursor: pointer;
-    border-bottom: 1px orangered solid;
-    color: orangered;
+    a:visited {
+      color: #5fad56;
+    }
+
+    a:hover {
+      cursor: pointer;
+      color: orangered;
+      border-bottom: 1px orangered solid;
+    }
   }
 }
 
@@ -70,6 +84,15 @@
   }
   to {
     background-color: white;
+  }
+}
+
+.active {
+  color: white;
+  background-color: yellow;
+
+  &:hover {
+    color: white;
   }
 }
 

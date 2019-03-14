@@ -4,6 +4,7 @@ import "./styles/main.scss";
 import Header from "./components/navigation/header";
 import Landing from "./pages/Landing";
 import PublicRecipes from "./pages/PublicRecipes";
+import CreateRecipe from "./pages/CreateRecipe";
 
 class App extends Component {
   // state = {
@@ -19,12 +20,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
         <BrowserRouter>
-          <Switch>
-            <Route exact path="/path" component={PublicRecipes} />
-            <Route exact path="/" component={Landing} />
-          </Switch>
+          <div>
+            <Header />
+            <Switch>
+              <Route exact path="/recipes" component={PublicRecipes} />
+              <Route path="/" component={Landing} />
+              <Route exact path="/create" component={CreateRecipe} />
+            </Switch>
+          </div>
         </BrowserRouter>
       </div>
     );

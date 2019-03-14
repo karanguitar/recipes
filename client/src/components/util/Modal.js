@@ -42,6 +42,7 @@ class Modal extends Component {
             src={this.props.toDisplay.img}
             alt={this.props.toDisplay.title}
           />
+          <p className="modal__content">{this.props.toDisplay.content}</p>
         </div>
       </div>
     );
