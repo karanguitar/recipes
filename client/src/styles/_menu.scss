@@ -89,7 +89,8 @@
 
 .active {
   color: white;
-  background-color: yellow;
+  background-color: lightgrey;
+  border-bottom: none;
 
   &:hover {
     color: white;

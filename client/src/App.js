@@ -25,7 +25,7 @@ class App extends Component {
             <Header />
             <Switch>
               <Route exact path="/recipes" component={PublicRecipes} />
-              <Route path="/" component={Landing} />
+              <Route exact path="/" component={Landing} />
               <Route exact path="/create" component={CreateRecipe} />
             </Switch>
           </div>
