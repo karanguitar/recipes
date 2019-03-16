@@ -1,21 +1,25 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 const dev = require("./config/dev");
 
+//Databases
+mongoose.connect(dev.mongoURI, { useNewUrlParser: true });
+require("./models/Recipe");
+
+//Routes
 const projectRoutes = require("./routes/projectRoutes");
 
+//App init
 const app = express();
 
 //Middleware
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//Database
-mongoose.connect(dev.mongoURI, { useNewUrlParser: true });
-
-//Routes
 app.use(projectRoutes);
 
+//Production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 

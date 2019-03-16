@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import axios from "axios";
+import history from "../history";
 
 class CreateRecipe extends Component {
   state = {
@@ -14,15 +16,25 @@ class CreateRecipe extends Component {
     });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
+  handleSubmit = async event => {
+    event.preventDefault();
+    const { name, ingredients, recipe, chef } = this.state;
+    const newRecipe = await axios.post("/api/recipes/create", {
+      name,
+      ingredients,
+      recipe,
+      chef
+    });
+    if (newRecipe.data.success) {
+      history.push("/recipes");
+    }
   };
 
   render() {
     const { name, ingredients, recipe, chef } = this.state;
     return (
       <div className="create">
-        <form className="create__form">
+        <form method="POST" className="create__form">
           <label className="create__label" htmlFor="name">
             Recipe Name:
             <input
@@ -73,7 +85,7 @@ class CreateRecipe extends Component {
             />
           </label>
           <button
-            onSubmit={this.handleSubmit}
+            onClick={this.handleSubmit}
             type="submit"
             className="create__button"
           >

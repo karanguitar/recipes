@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import "./styles/main.scss";
+import history from "./history";
 import Header from "./components/navigation/header";
 import Landing from "./pages/Landing";
 import PublicRecipes from "./pages/PublicRecipes";
@@ -20,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <BrowserRouter>
+        <Router history={history}>
           <div>
             <Header />
             <Switch>
@@ -29,7 +30,7 @@ class App extends Component {
               <Route exact path="/create" component={CreateRecipe} />
             </Switch>
           </div>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }
