@@ -2,16 +2,60 @@ import React, { Component } from "react";
 import RecipeListItem from "../components/RecipeListItem";
 import img from "../img/cuisine-2248567_1920.jpg";
 import Modal from "../components/util/Modal";
+import axios from "axios";
 
 class PublicRecipes extends Component {
+  items = [
+    {
+      name: "Curry",
+      recipe:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit tenetur sed commodi magni quisquam temporibus quae velit possimus incidunt fugiat illum obcaecati quo, harum cumque ipsa corporis minima quam ad.",
+      img: img
+    },
+    {
+      name: "Bread",
+      recipe:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit tenetur sed commodi magni quisquam temporibus quae velit possimus incidunt fugiat illum obcaecati quo, harum cumque ipsa corporis minima quam ad.",
+      img: img
+    },
+    {
+      name: "Soy main",
+      recipe:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit tenetur sed commodi magni quisquam temporibus quae velit possimus incidunt fugiat illum obcaecati quo, harum cumque ipsa corporis minima quam ad.",
+      img: img
+    },
+    {
+      name: "chicken",
+      recipe:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit tenetur sed commodi magni quisquam temporibus quae velit possimus incidunt fugiat illum obcaecati quo, harum cumque ipsa corporis minima quam ad.",
+      img: img
+    }
+  ];
+
   state = {
     showModal: false,
-    selectedRecipe: {}
+    selectedRecipe: {},
+    recipes: this.items
   };
 
-  //   componentWillMount() {
-  //     this.props.getHeightForModal(window.innerHeight);
-  //   }
+  componentWillMount() {
+    axios.get("/api/recipes").then(data => {
+      if (data.data.length === 0) {
+        return;
+      } else {
+        const newList = data.data.map(recipe => {
+          return { ...recipe, img: img };
+        });
+        this.setState(
+          prevData => ({
+            recipes: [...newList, ...prevData.recipes]
+          }),
+          () => console.log(this.state.recipes)
+        );
+        console.log(data.data);
+      }
+    });
+  }
 
   selectRecipe = recipe => {
     this.setState(
@@ -28,48 +72,23 @@ class PublicRecipes extends Component {
     }));
   };
 
-  items = [
-    {
-      title: "Curry",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit tenetur sed commodi magni quisquam temporibus quae velit possimus incidunt fugiat illum obcaecati quo, harum cumque ipsa corporis minima quam ad.",
-      img: img
-    },
-    {
-      title: "Bread",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit tenetur sed commodi magni quisquam temporibus quae velit possimus incidunt fugiat illum obcaecati quo, harum cumque ipsa corporis minima quam ad.",
-      img: img
-    },
-    {
-      title: "Soy main",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit tenetur sed commodi magni quisquam temporibus quae velit possimus incidunt fugiat illum obcaecati quo, harum cumque ipsa corporis minima quam ad.",
-      img: img
-    },
-    {
-      title: "chicken",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit tenetur sed commodi magni quisquam temporibus quae velit possimus incidunt fugiat illum obcaecati quo, harum cumque ipsa corporis minima quam ad.",
-      img: img
-    }
-  ];
-
   render() {
     const { showModal, selectedRecipe } = this.state;
 
-    const renderListItem = this.items.map((item, index) => {
-      const { title, img, content } = item;
+    const renderListItem = this.state.recipes.map((item, index) => {
+      const { name, img, recipe } = item;
       return (
         <div key={index} onClick={() => this.selectRecipe(item)}>
-          <RecipeListItem image={img} title={title} content={content} />
+          <RecipeListItem image={img} title={name} content={recipe} />
         </div>
       );
     });
 
     return (
       <div className="recipes">
-        <ul className="recipes__list">{renderListItem}</ul>
+        <ul className="recipes__list">
+          {this.state.recipes.length > 0 ? renderListItem : ""}
+        </ul>
         {showModal ? (
           <Modal
             onClose={() => this.setState({ showModal: false })}

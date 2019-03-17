@@ -2,6 +2,7 @@
   margin-top: 10rem;
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
+  margin-bottom: 5rem;
 
   &__list {
     grid-column: 2/3;

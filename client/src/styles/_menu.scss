@@ -106,3 +106,20 @@
     height: 0;
   }
 }
+
+@media only screen and (max-width: 900px) {
+  .navigation {
+    &__menu {
+      margin-top: 2.5rem;
+      margin-left: 6rem;
+      padding-right: 1rem;
+    }
+    &__item {
+      display: none;
+    }
+
+    &__heading {
+      font-size: 1.6rem;
+    }
+  }
+}

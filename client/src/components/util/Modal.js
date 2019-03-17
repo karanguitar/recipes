@@ -36,13 +36,13 @@ class Modal extends Component {
     return (
       <div onClick={this.clickedBackground} className="modal__background">
         <div onClick={e => e.stopPropagation()} className="modal__container">
-          <h1 className="modal__heading">{this.props.toDisplay.title}</h1>
+          <h1 className="modal__heading">{this.props.toDisplay.name}</h1>
           <img
             className="modal__image"
             src={this.props.toDisplay.img}
-            alt={this.props.toDisplay.title}
+            alt={this.props.toDisplay.name}
           />
-          <p className="modal__content">{this.props.toDisplay.content}</p>
+          <p className="modal__content">{this.props.toDisplay.recipe}</p>
         </div>
       </div>
     );

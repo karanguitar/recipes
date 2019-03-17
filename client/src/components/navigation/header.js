@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import logo from "../../img/logo.png";
 import { NavLink, Link } from "react-router-dom";
+import DrawerToggleButton from "./DrawerToggleButton";
 
 class header extends Component {
   state = {
-    color: "",
-    activeClass: ""
+    color: ""
   };
 
   listenScrollEvent = e => {
@@ -32,17 +32,18 @@ class header extends Component {
           <h1 className="navigation__heading">Recipes</h1>
         ) : null}
         <ul className="navigation__menu">
-          <li onClick={this.activeClass} className="navigation__item">
+          <DrawerToggleButton click={this.props.drawerClick} />
+          <li className="navigation__item">
             <NavLink activeClassName="active" exact to="/recipes">
               New recipes
             </NavLink>
           </li>
-          <li onClick={this.activeClass} className="navigation__item">
+          <li className="navigation__item">
             <NavLink activeClassName="active" exact to="/create">
               Create
             </NavLink>
           </li>
-          <li onClick={this.activeClass} className="navigation__item">
+          <li className="navigation__item">
             <NavLink activeClassName="active" exact to="/login">
               Log In{" "}
             </NavLink>

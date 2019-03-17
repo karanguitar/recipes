@@ -3,11 +3,10 @@ const Recipe = mongoose.model("recipes");
 
 exports.getRecipes = async (req, res) => {
   const recipes = await Recipe.find();
-
   if (recipes) {
-    res.send(recipes);
+    return res.send(recipes);
   } else {
-    return;
+    return res.json({ data: false });
   }
 };
 
