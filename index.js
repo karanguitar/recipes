@@ -1,10 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const dev = require("./config/dev");
+const keys = require("./config/keys");
 
 //Databases
-mongoose.connect(dev.mongoURI, { useNewUrlParser: true });
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 require("./models/Recipe");
 
 //Routes
