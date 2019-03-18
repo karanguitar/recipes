@@ -1,0 +1,30 @@
+.login {
+  margin-top: 10rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+
+  &__container {
+    grid-column: 2/3;
+    display: grid;
+    grid-row-gap: 2rem;
+  }
+
+  &__heading {
+    font-size: 2rem;
+  }
+
+  &__information {
+    font-size: 1.5rem;
+  }
+
+  &__link,
+  &__link:visited {
+    font-size: 1.3rem;
+    color: green;
+    text-decoration: none;
+    background: lightgrey;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+}

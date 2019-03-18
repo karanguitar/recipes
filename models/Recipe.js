@@ -3,8 +3,9 @@ const { Schema } = mongoose;
 
 const recipeSchema = new Schema({
   name: String,
-  ingredients: String,
-  recipe: String,
+  description: String,
+  ingredients: Array,
+  recipe: Array,
   chef: String,
   category: String,
   countryOfOrigin: String

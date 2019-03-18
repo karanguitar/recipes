@@ -1,4 +1,5 @@
 .create {
+  box-sizing: border-box;
   margin-top: 10rem;
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
@@ -6,6 +7,7 @@
   padding-bottom: 10rem;
 
   &__form {
+    margin-right: 2rem;
     grid-column: 2/3;
     width: 100%;
     display: grid;
@@ -53,6 +55,10 @@
     color: white;
     box-shadow: 3px 11px 16px -8px rgba(0, 0, 0, 0.75);
     padding: 0.5rem;
+  }
+
+  &__error {
+    color: red;
   }
 
   @media screen and (max-width: 900px) {

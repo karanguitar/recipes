@@ -11,9 +11,10 @@ exports.getRecipes = async (req, res) => {
 };
 
 exports.createRecipe = async (req, res) => {
-  const { name, ingredients, recipe, chef } = req.body;
+  const { name, ingredients, recipe, chef, description } = req.body;
   const newRecipe = await new Recipe({
     name,
+    description,
     ingredients,
     recipe,
     chef

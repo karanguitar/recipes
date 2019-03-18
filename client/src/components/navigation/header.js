@@ -35,7 +35,7 @@ class header extends Component {
           <DrawerToggleButton click={this.props.drawerClick} />
           <li className="navigation__item">
             <NavLink activeClassName="active" exact to="/recipes">
-              New recipes
+              Recipes
             </NavLink>
           </li>
           <li className="navigation__item">

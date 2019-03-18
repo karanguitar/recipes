@@ -6,6 +6,8 @@ import Header from "./components/navigation/header";
 import Landing from "./pages/Landing";
 import PublicRecipes from "./pages/PublicRecipes";
 import CreateRecipe from "./pages/CreateRecipe";
+import Page404 from "./pages/page404";
+import LoginPage from "./pages/Login";
 import SideDrawer from "./components/navigation/SideDrawer";
 import Backdrop from "./components/navigation/Backdrop";
 class App extends Component {
@@ -25,7 +27,7 @@ class App extends Component {
     }));
   };
 
-  backDropClick = () => {
+  closeDrawer = () => {
     this.setState({ sideDrawerOpen: false });
   };
 
@@ -34,8 +36,8 @@ class App extends Component {
     let backDrop;
 
     if (this.state.sideDrawerOpen) {
-      sideDrawer = <SideDrawer />;
-      backDrop = <Backdrop click={this.backDropClick} />;
+      sideDrawer = <SideDrawer click={this.closeDrawer} />;
+      backDrop = <Backdrop click={this.closeDrawer} />;
     }
     return (
       <div className="App">
@@ -46,8 +48,10 @@ class App extends Component {
             {backDrop}
             <Switch>
               <Route exact path="/recipes" component={PublicRecipes} />
+              <Route exact path="/login" component={LoginPage} />
               <Route exact path="/" component={Landing} />
               <Route exact path="/create" component={CreateRecipe} />
+              <Route component={Page404} />
             </Switch>
           </div>
         </Router>

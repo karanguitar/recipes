@@ -1,22 +1,42 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const SideDrawer = () => {
+const SideDrawer = props => {
   return (
     <nav className="side-drawer">
       <ul className="side-drawer__menu">
         <li className="side-drawer__item">
-          <NavLink activeClassName="active" exact to="/recipes">
+          <NavLink onClick={props.click} activeClassName="active" exact to="/">
+            Home
+          </NavLink>
+        </li>
+        <li className="side-drawer__item">
+          <NavLink
+            onClick={props.click}
+            activeClassName="active"
+            exact
+            to="/recipes"
+          >
             New recipes
           </NavLink>
         </li>
         <li className="side-drawer__item">
-          <NavLink activeClassName="active" exact to="/create">
+          <NavLink
+            onClick={props.click}
+            activeClassName="active"
+            exact
+            to="/create"
+          >
             Create
           </NavLink>
         </li>
         <li className="side-drawer__item">
-          <NavLink activeClassName="active" exact to="/login">
+          <NavLink
+            onClick={props.click}
+            activeClassName="active"
+            exact
+            to="/login"
+          >
             Log In{" "}
           </NavLink>
         </li>

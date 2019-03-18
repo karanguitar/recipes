@@ -9,19 +9,19 @@ class Landing extends Component {
       image: ImageOne,
       title: "Discover new foods",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        "Feel bored of the same old food everyday? We understand. Look through our recipes section to discover new recipes! Try something new for dinner or breakfast. Impress your friends and family with an exotic feast!"
     },
     {
       image: ImageTwo,
       title: "Share your recipes",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        "Share your great recipes with people. Is this authentic or something you whiped up in the kitchen after a night out? It does not matter, as long as it is tasty we want to hear about it! Click on create to become part of the community."
     },
     {
       image: ImageThree,
       title: "Journey through food",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        "You do not need to travel far to try new recipes. You can discover food from all over the world right here. If you do not see your part of the world represented here then it is your chance to shine and add something amazing!"
     }
   ];
 
