@@ -6,7 +6,6 @@
     background: url("../img/herbs2.jpg");
     background-position: center;
     background-attachment: fixed;
-
     width: 100%;
     background-size: cover;
     min-height: 100vh;
@@ -94,6 +93,15 @@
         ". content2 content2 ."
         ". img3 img3 ."
         ". content3 content3 .";
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .landing {
+    &__hero {
+      height: 50vh;
+      background-size: auto;
     }
   }
 }

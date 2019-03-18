@@ -20,7 +20,8 @@
     margin-top: 1rem;
     padding: 0.5rem;
 
-    a {
+    a,
+    a:visited {
       height: 100%;
       font-size: 1.2rem;
       padding: 0 0.5rem;
@@ -28,9 +29,6 @@
       transition: 1s all;
       display: flex;
       margin-bottom: 2rem;
-    }
-
-    a:visited {
       color: #5fad56;
     }
 

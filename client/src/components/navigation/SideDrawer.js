@@ -17,7 +17,7 @@ const SideDrawer = props => {
             exact
             to="/recipes"
           >
-            New recipes
+            Recipes
           </NavLink>
         </li>
         <li className="side-drawer__item">
